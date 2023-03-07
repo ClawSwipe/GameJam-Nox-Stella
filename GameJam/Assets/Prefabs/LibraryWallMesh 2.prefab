@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6643333878867311118}
   m_Layer: 0
-  m_Name: LibraryWallMesh
+  m_Name: LibraryWallMesh 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
