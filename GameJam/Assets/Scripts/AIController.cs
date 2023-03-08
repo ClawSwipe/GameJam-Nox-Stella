@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
+
 public class AIController : MonoBehaviour
 {
+
     public AudioSource src;
     public AudioClip sfx;
     public NavMeshAgent navMeshAgent;               //  Nav mesh agent component
@@ -42,6 +44,7 @@ public class AIController : MonoBehaviour
 
     void Start()
     {
+
         animator = GetComponent<Animator>();
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
@@ -78,8 +81,6 @@ public class AIController : MonoBehaviour
 
     private void Chasing()
     {
-
-
         SceneManager.LoadScene("SampleScene");
         // //  The enemy is chasing the player
         // m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
@@ -157,6 +158,10 @@ public class AIController : MonoBehaviour
     public void NextPoint()
     {
         m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
+        if (m_CurrentWaypointIndex >= waypoints.Length)
+        {
+            m_CurrentWaypointIndex = 0;
+        }
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
     }
 

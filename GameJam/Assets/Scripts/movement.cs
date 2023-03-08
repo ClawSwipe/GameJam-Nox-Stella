@@ -50,12 +50,12 @@ public class movement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, targetangle, 0f);
             Animate(forward_BOOL);
             controller.Move(direction * speed * Time.deltaTime);
-            Debug.Log("Moving");
+
         }
         else
         {
             Animate(idle_Bool);
-            Debug.Log("Idle");
+
         }
     }
 
@@ -90,12 +90,12 @@ public class movement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             Move(direction, moveDashSpeed);
-            Debug.Log("I AM THE FLASH");
+
         }
         else
         {
             Move(lastDirection, idleDashSpeed);
-            Debug.Log("I AM THE SLOW");
+
         }
 
     }
